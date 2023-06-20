@@ -32,8 +32,8 @@
         //"format": "{icon}",
         "persistent_workspaces": {
             "1": [],
-            "2": [],
-            "3": [],
+            "2": ["opera"],
+            "3": ["discord"],
             "4": [],
             "5": [],
             "6": [],
@@ -63,7 +63,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{: %R   %d/%m}",
+        "format": "{: %r   %d/%m}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "backlight": {

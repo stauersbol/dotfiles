@@ -107,3 +107,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # PATH with Doom emacs and Go bin
 export PATH="$PATH:$HOME/.config/emacs/bin:$HOME/go/bin"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
