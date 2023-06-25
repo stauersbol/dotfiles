@@ -109,3 +109,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.config/emacs/bin:$HOME/go/bin"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+export PROJECTS="/mnt/data/Projects"
+
+alias cdp="cd $PROJECTS"
