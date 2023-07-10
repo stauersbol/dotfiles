@@ -60,6 +60,20 @@
 (setq lsp-ui-sideline-enable t)
 (setq lsp-signature-render-documentation nil)
 
+(use-package lsp-mode
+  :defer t
+  :config
+  (advice-add 'json-parse-string :around
+              (lambda (orig string &rest rest)
+                (apply orig (s-replace "\\u0000" "" string)
+                       rest)))
+  (advice-add 'json-parse-buffer :around
+              (lambda (orig &rest rest)
+                (while (re-search-forward "\\u0000" nil t)
+                  (replace-match ""))
+                (apply orig rest)))
+  )
+
 ;; WAKATIME CONFIG
 (use-package wakatime-mode
   :ensure t
