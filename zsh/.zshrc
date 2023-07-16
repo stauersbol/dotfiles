@@ -113,3 +113,5 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 export PROJECTS="/mnt/data/Projects"
 
 alias cdp="cd $PROJECTS"
+
+alias vim="nvim"
