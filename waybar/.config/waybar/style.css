@@ -54,6 +54,7 @@ tooltip {
 #custom-updates,
 #custom-caffeine,
 #custom-weather,
+#custom-spotify,
 #window,
 #clock,
 #battery,
@@ -140,6 +141,10 @@ tooltip {
     border-radius: 0 10px 10px 0;
     margin-right: 10px;
     border-left: 0px;
+}
+
+#custom-spotify {
+  color: @green;
 }
 
 #custom-weather {
