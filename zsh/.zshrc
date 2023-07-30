@@ -110,8 +110,37 @@ export PATH="$PATH:$HOME/.config/emacs/bin:$HOME/go/bin"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+alias vim="nvim"
+VIM="nvim"
 export PROJECTS="/mnt/data/Projects"
 
-alias cdp="cd $PROJECTS"
+source ./.railway_completion
 
-alias vim="nvim"
+# Function to navigate to the selected folder
+function navigate_to_folder() {
+  cd "$1"
+  zle -I
+}
+
+# Array of folders you want to navigate to
+folders=(
+  "$PROJECTS/work/"
+  "$PROJECTS/mizuho/"
+  "$PROJECTS/okayan/"
+  "$PROJECTS/personal/"
+  # Add more folders here as needed
+)
+
+# Function to run the folder selection script
+function select_and_cd_folder() {
+  local selected_folder
+  selected_folder=$(printf '%s\n' "${folders[@]}" | fzf)
+  
+  if [ -n "$selected_folder" ]; then
+    navigate_to_folder "$selected_folder"
+  fi
+}
+
+# Create a zsh keybind to call the function on Ctrl+Shift+F
+zle -N select_and_cd_folder
+bindkey '^F' select_and_cd_folder
