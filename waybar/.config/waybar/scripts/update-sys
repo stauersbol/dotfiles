@@ -8,18 +8,6 @@ if [ ! -f /etc/arch-release ]; then
 	exit 0
 fi
 
-# Calculate updates for each service
-AUR=$(yay -Qua | wc -l)
-OFFICIAL=$(checkupdates | wc -l)
-BREW=$(brew outdated | wc -l)
-
-# Case/switch for each service updates
-case $1 in
-aur) echo " $AUR" ;;
-official) echo " $OFFICIAL" ;;
-brew) echo " $BREW" ;;
-esac
-
 # If the parameter is "update", update all services
 if [ "$1" = "update" ]; then
 	kitty -e --title update-sys sh -c 'yay -Syu && brew upgrade'
@@ -27,6 +15,10 @@ fi
 
 # If there aren't any parameters, return the total number of updates
 if [ "$1" = "" ]; then
+	# Calculate updates for each service
+	AUR=$(yay -Qua | wc -l)
+	OFFICIAL=$(checkupdates | wc -l)
+	BREW=$(brew outdated | wc -l)
 	# Calculate total number of updates
 	COUNT=$((OFFICIAL + AUR + BREW))
 	# If there are updates, the script will output the following:   Updates
