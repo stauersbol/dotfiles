@@ -6,14 +6,8 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "height": 0,
-  "modules-left": [
-    "clock",
-    "custom/weather",
-    "wlr/workspaces"
-  ],
-  "modules-center": [
-    "hyprland/window"
-  ],
+  "modules-left": ["clock", "custom/weather", "hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
   "modules-right": [
     "tray",
     "custom/updates",
@@ -27,7 +21,7 @@
   "hyprland/window": {
     "format": "{}"
   },
-  "wlr/workspaces": {
+  "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
     "on-click": "activate",
@@ -50,7 +44,7 @@
     "interval": 300, // every two hours
     "exec": "~/.config/waybar/scripts/update-sys", // # of updates and tooltip details
     "on-click": "~/.config/waybar/scripts/update-sys update", // update system
-    "tooltip": true
+    "tooltip": false
   },
   "custom/weather": {
     "tooltip": true,
@@ -78,11 +72,7 @@
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", ""],
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
     "min-length": 6
@@ -97,19 +87,7 @@
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
@@ -126,11 +104,7 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "default": ["", "", ""]
     }
   },
   "pulseaudio#microphone": {
