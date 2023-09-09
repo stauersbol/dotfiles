@@ -151,3 +151,6 @@ bindkey '^F' select_and_cd_folder
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Created by `pipx` on 2023-09-09 19:55:38
+export PATH="$PATH:/home/slashiy/.local/bin"
