@@ -3,8 +3,10 @@ return {
     "catppuccin/nvim",
     lazy = true,
     name = "catppuccin",
+    ---@type CatppuccinOptions
     opts = {
       flavour = "mocha",
+      transparent_background = true,
       integrations = {
         alpha = true,
         cmp = true,
