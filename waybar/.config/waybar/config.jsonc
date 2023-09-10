@@ -11,7 +11,7 @@
   "modules-right": [
     "tray",
     "custom/updates",
-    "custom/language",
+    "hyprland/language",
     "battery",
     "backlight",
     "custom/spotify",
@@ -20,6 +20,13 @@
   ],
   "hyprland/window": {
     "format": "{}"
+  },
+  "hyprland/language": {
+    "format": "⌨ {}",
+    "format-en": "US",
+    "format-da": "DK",
+    "on-scroll-up": "hyprctl switchxkblayout keychron-keychron-q8 next",
+    "on-scroll-down": "hyprctl switchxkblayout keychron-keychron-q8 prev"
   },
   "hyprland/workspaces": {
     "disable-scroll": true,
