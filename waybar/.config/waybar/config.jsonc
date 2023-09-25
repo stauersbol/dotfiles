@@ -64,7 +64,7 @@
     "exec": "~/.config/waybar/scripts/mediaplayer.py --player spotify",
     "format": "{}  ",
     "return-type": "json",
-    "on-click": "playerctl play-pause",
+    "on-click": "playerctl -p spotify play-pause",
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous"
   },
