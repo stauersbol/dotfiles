@@ -150,3 +150,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Created by `pipx` on 2023-09-09 19:55:38
 export PATH="$PATH:/home/slashiy/.local/bin"
+
+alias sshk="kitty +kitten ssh"
+
+# [[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
