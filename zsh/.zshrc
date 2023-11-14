@@ -154,3 +154,13 @@ export PATH="$PATH:/home/slashiy/.local/bin"
 alias sshk="kitty +kitten ssh"
 
 # [[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# opam configuration
+[[ ! -r /home/slashiy/.opam/opam-init/init.zsh ]] || source /home/slashiy/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+gh auth setup-git
+. /opt/asdf-vm/asdf.sh
