@@ -124,6 +124,7 @@ folders=(
   "$PROJECTS/mizuho/"
   "$PROJECTS/okayan/"
   "$PROJECTS/personal/"
+  "$PROJECTS/bluemeow/"
   # Add more folders here as needed
 )
 
