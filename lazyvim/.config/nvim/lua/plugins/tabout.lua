@@ -30,16 +30,13 @@ return {
       })
 
       local ls = require("luasnip")
-      local cmp = require("cmp")
 
       local function replace_keycodes(c)
         return vim.api.nvim_replace_termcodes(c, true, true, true)
       end
 
       function _G.tab_binding()
-        if cmp.visible() then
-          cmp.select_next_item()
-        elseif ls.expand_or_jumpable() then
+        if ls.expand_or_jumpable() then
           return replace_keycodes("<Plug>luasnip-expand-or-jump")
         else
           return replace_keycodes("<Plug>(Tabout)")
@@ -47,9 +44,7 @@ return {
       end
 
       function _G.s_tab_binding()
-        if cmp.visible() then
-          cmp.select_prev_item()
-        elseif ls.jumpable(-1) then
+        if ls.jumpable(-1) then
           return replace_keycodes("<Plug>luasnip-jump-prev")
         else
           return replace_keycodes("<Plug>(TaboutBack)")
