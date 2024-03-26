@@ -105,6 +105,9 @@ fi
 export PATH="$PATH:$HOME/.config/emacs/bin:$HOME/go/bin"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$PATH:$HOME/.config/v-analyzer/bin"
+
+export PATH="$PATH:/home/slashiy/.local/bin"
 
 alias vim="nvim"
 VIM="nvim"
@@ -150,7 +153,6 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Created by `pipx` on 2023-09-09 19:55:38
-export PATH="$PATH:/home/slashiy/.local/bin"
 
 alias sshk="kitty +kitten ssh"
 
@@ -163,5 +165,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # opam configuration
 [[ ! -r /home/slashiy/.opam/opam-init/init.zsh ]] || source /home/slashiy/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-gh auth setup-git
-. /opt/asdf-vm/asdf.sh
+if command -v gh &> /dev/null; then
+  gh auth setup-git
+fi
+
+[[ -s "/opt/asdf-vm/asdf.sh" ]] && . /opt/asdf-vm/asdf.sh
