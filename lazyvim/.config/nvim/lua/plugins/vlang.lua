@@ -3,7 +3,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        vls = {},
+        v_analyzer = {},
       },
     },
   },
