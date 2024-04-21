@@ -22,10 +22,12 @@ window {
     border: 3px;
     border-color: @border-col;
     background-color: @bg-col;
+    border-radius: 20px;
 }
 
 mainbox {
     background-color: @bg-col;
+    border-radius: 20px;
 }
 
 inputbar {

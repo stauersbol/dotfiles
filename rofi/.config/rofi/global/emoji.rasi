@@ -10,8 +10,8 @@ configuration {
 	text-color: #eff0eb;
 	background-color: #1917244D;
 	border-color: #00000000;
-	width: 684px;
-	height: 477px;
+	width: 800px;
+	height: 500px;
 	location: 0;
 }
 
@@ -47,8 +47,12 @@ listview {
 	padding: 8px 10px 10px 10px;
 }
 
+window {
+    border-radius: 20px;
+}
+
 element {
-	border-radius: 3px;
+	border-radius: 5px;
 	padding: 14px 0px 14px 0px;
 }
 
@@ -57,10 +61,8 @@ element-text {
 	expand: false;
 	text-color: #333333;
 	horizontal-align: 1;
-	vertical-align: 0.5;
-	margin: 0px 0px 0px 13px;
-	width: 1px;
-	padding: 1px 0px 16px;
+  vertical-align: 0.5;
+	width: 0px;
 }
 
 element selected {
