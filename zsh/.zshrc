@@ -121,23 +121,35 @@ function navigate_to_folder() {
   zle -I
 }
 
+typeset -A folder_map
+
 # Array of folders you want to navigate to
-folders=(
-  "$PROJECTS/work/"
-  "$PROJECTS/mizuho/"
-  "$PROJECTS/okayan/"
-  "$PROJECTS/personal/"
-  "$PROJECTS/bluemeow/"
-  # Add more folders here as needed
-)
+folders=()
+
+function get_project_folders() {
+  local folder
+  local alias
+  folder_map=()  # Clear previous entries
+
+  while IFS= read -r -d '' folder; do
+    if [[ "$folder" != "$PROJECTS" ]]; then
+      alias=$(basename "$folder")  # Get just the folder name
+      alias=${(C)alias}  # Capitalize the first letter in Zsh
+      folder_map[$alias]=$folder  # Map alias to full path
+    fi
+  done < <(find "$PROJECTS" -maxdepth 1 -mindepth 1 -type d -print0)
+}
+
+
 
 # Function to run the folder selection script
 function select_and_cd_folder() {
-  local selected_folder
-  selected_folder=$(printf '%s\n' "${folders[@]}" | fzf)
+  get_project_folders  # Populate folder_map array
+  local selected_alias
+  selected_alias=$(printf '%s\n' "${(@k)folder_map}" | fzf)  # Using fzf to select a folder alias
   
-  if [ -n "$selected_folder" ]; then
-    navigate_to_folder "$selected_folder"
+  if [[ -n "$selected_alias" ]]; then
+    navigate_to_folder "$folder_map[$selected_alias]"
   fi
 }
 
