@@ -166,9 +166,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Created by `pipx` on 2023-09-09 19:55:38
 
-alias sshk="kitty +kitten ssh"
-
 # [[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
+#
+alias ssh="TERM=xterm-256color ssh"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
