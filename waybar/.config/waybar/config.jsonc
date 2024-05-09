@@ -34,7 +34,6 @@
   ],
   "modules-right": [
     "custom/padd",
-    "",
     "custom/spotify",
     "custom/l_end",
     "backlight",
@@ -49,9 +48,6 @@
     "custom/r_end",
     "custom/l_end",
     "custom/wallchange",
-    "custom/mode",
-    "custom/wbar",
-    "custom/cliphist",
     "custom/power",
     "custom/r_end",
     "custom/padd",
