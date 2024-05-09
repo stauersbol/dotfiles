@@ -4,3 +4,7 @@
 --
 
 vim.wo.relativenumber = false
+vim.opt.showtabline = 0
+
+-- Only turn on for debugging LSP stuff.
+-- vim.lsp.set_log_level("debug")
