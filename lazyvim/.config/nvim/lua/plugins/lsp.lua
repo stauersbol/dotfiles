@@ -42,7 +42,7 @@ return {
           "templ",
           "v",
           "vue",
-          "zls",
+          "zig",
         })
       end
     end,
