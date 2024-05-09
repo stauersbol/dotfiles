@@ -113,7 +113,7 @@ alias vim="nvim"
 VIM="nvim"
 export PROJECTS="/mnt/data/Projects"
 
-source ./.railway_completion
+source ~/.railway_completion
 
 # Function to navigate to the selected folder
 function navigate_to_folder() {
