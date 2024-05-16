@@ -19,6 +19,7 @@ return {
         v_analyzer = {},
         volar = {},
         zls = {},
+        crystalline = {},
       },
     },
   },
