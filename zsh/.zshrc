@@ -164,10 +164,6 @@ bindkey '^F' select_and_cd_folder
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Created by `pipx` on 2023-09-09 19:55:38
-
-# [[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
-#
 alias ssh="TERM=xterm-256color ssh"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
