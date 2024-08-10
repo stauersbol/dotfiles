@@ -70,7 +70,7 @@ zstyle ':omz:update' frequency 13
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ssh colored-man-pages command-not-found direnv common-aliases copypath cp docker dotenv emacs zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(ssh colored-man-pages command-not-found direnv common-aliases copypath cp docker dotenv emacs zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -107,7 +107,8 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$PATH:$HOME/.config/v-analyzer/bin"
 
-export PATH="$PATH:/home/slashiy/.local/bin"
+export PATH="$PATH:$HOME/slashiy/.local/bin"
+export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
 
 alias vim="nvim"
 VIM="nvim"
