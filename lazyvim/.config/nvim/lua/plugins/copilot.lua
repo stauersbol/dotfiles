@@ -1,5 +1,6 @@
 return {
   {
+    enabled = false,
     "CopilotC-Nvim/CopilotChat.nvim",
     version = "v2.8.0",
     dependencies = {
