@@ -181,3 +181,5 @@ fi
 [[ -s "/opt/asdf-vm/asdf.sh" ]] && . /opt/asdf-vm/asdf.sh
 
 compdef _ssh .ssh-in-alacritty=ssh
+
+eval $(thefuck --alias)
