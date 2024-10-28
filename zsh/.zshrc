@@ -176,6 +176,10 @@ if command -v gh &> /dev/null; then
   gh auth setup-git
 fi
 
+if command -v fzf &> /dev/null; then
+  source <(fzf --zsh)
+fi
+
 [[ -s "/opt/asdf-vm/asdf.sh" ]] && . /opt/asdf-vm/asdf.sh
 
 compdef _ssh .ssh-in-alacritty=ssh
