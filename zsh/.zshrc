@@ -70,7 +70,7 @@ zstyle ':omz:update' frequency 13
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(ssh colored-man-pages command-not-found direnv common-aliases copypath cp docker dotenv emacs zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(ssh colored-man-pages command-not-found direnv common-aliases copypath cp docker dotenv emacs zsh-autosuggestions zsh-syntax-highlighting eza)
 
 source $ZSH/oh-my-zsh.sh
 
