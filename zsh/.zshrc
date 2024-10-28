@@ -185,3 +185,5 @@ fi
 compdef _ssh .ssh-in-alacritty=ssh
 
 eval $(thefuck --alias)
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
