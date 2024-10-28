@@ -81,12 +81,11 @@
     //"format": "<span color='#5e81ac'>{icon}</span>{temperatureC}°C",
     "format-icons": [" "],
     "format": "{icon} {temperatureC}°C",
-    "on-click-right": "kitty --title btop sh -c 'btop'",
   },
 
   "hyprland/workspaces": {
     "persistent-workspaces": {
-      "*": 5,
+      "*": [1, 2, 3, 4, 5],
     },
     "disable-scroll": true,
     "all-outputs": false,
@@ -211,7 +210,7 @@
 
   "pulseaudio#microphone": {
     "format": "{format_source}",
-    "format-source": "",
+    "format-source": "",
     "format-source-muted": "",
     "on-click": "pavucontrol -t 4",
     "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -i m",
@@ -249,47 +248,9 @@
   },
 
   "custom/wallchange": {
-    "format": "{}",
-    "exec": "echo ; echo 󰆊 switch wallpaper",
+    "format": "󰸉{}",
+    "exec": "echo ; echo 󰸉 switch wallpaper",
     "on-click": "~/.config/hypr/scripts/wall",
-    "interval": 86400, // once every day
-    "tooltip": true,
-  },
-
-  "custom/mode": {
-    "format": "{}",
-    "exec": "echo ; echo 󰟡 switch mode",
-    "on-click": "~/.config/hypr/scripts/themeswitch.sh -n",
-    "on-click-right": "~/.config/hypr/scripts/themeswitch.sh -p",
-    "on-click-middle": "sleep 0.1 && ~/.config/hypr/scripts/themeselect.sh",
-    "interval": 86400, // once every day
-    "tooltip": true,
-  },
-
-  "custom/wbar": {
-    "format": "{}", //    //
-    "exec": "echo ; echo  switch menubar //  dock",
-    "on-click": "~/.config/hypr/scripts/wbarconfgen.sh n",
-    "on-click-right": "~/.config/hypr/scripts/wbarconfgen.sh p",
-    "on-click-middle": "sleep 0.1 && ~/.config/hypr/scripts/quickapps.sh kitty firefox spotify code dolphin",
-    "interval": 86400,
-    "tooltip": true,
-  },
-
-  "custom/cliphist": {
-    "format": "{}",
-    "exec": "echo ; echo 󰅇 clipboard history",
-    "on-click": "sleep 0.1 && ~/.config/hypr/scripts/cliphist.sh c",
-    "on-click-right": "sleep 0.1 && ~/.config/hypr/scripts/cliphist.sh d",
-    "on-click-middle": "sleep 0.1 && ~/.config/hypr/scripts/cliphist.sh w",
-    "interval": 86400, // once every day
-    "tooltip": true,
-  },
-
-  "custom/power": {
-    "format": "{}",
-    "exec": "echo ; echo  logout",
-    "on-click": "~/.config/hypr/scripts/logoutlaunch.sh 2",
     "interval": 86400, // once every day
     "tooltip": true,
   },
