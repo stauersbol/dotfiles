@@ -180,9 +180,9 @@ if command -v fzf &> /dev/null; then
   source <(fzf --zsh)
 fi
 
-[[ -s "/opt/asdf-vm/asdf.sh" ]] && . /opt/asdf-vm/asdf.sh
+alias ssh="TERM=xterm ssh"
 
-compdef _ssh .ssh-in-alacritty=ssh
+[[ -s "/opt/asdf-vm/asdf.sh" ]] && . /opt/asdf-vm/asdf.sh
 
 eval $(thefuck --alias)
 
