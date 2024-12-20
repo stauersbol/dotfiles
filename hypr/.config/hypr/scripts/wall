@@ -1,14 +1,50 @@
 #!/usr/bin/env bash
 
-# SWWW stuff
-images_path=~/.wallpapers/
-PICS=($(find "${images_path}" -type f \( -iname \*.jpg -o -iname \*.jpeg -o -iname \*.png -o -iname \*.gif \) | sort))
-randomNumber=$((($(date +%s) + RANDOM) + $$))
-randomPicture="${PICS[$((randomNumber % ${#PICS[@]}))]}"
-wallpaper=$randomPicture
-swww img "$wallpaper" --transition-type grow --transition-pos 0.9,0.1 --transition-duration 1.5 --transition-fps 90
+# Configurations
+images_path="${HOME}/.wallpapers/"
+history_file="${HOME}/.wallpaper_history"
+current_wallpaper="${HOME}/.current_wallpaper"
 
-# Link current wallpaper
-ln -sf "$wallpaper" "$HOME/.current_wallpaper"
+# Find valid image files
+PICS=($(find "${images_path}" -type f \( -iname "*.jpg" -o -iname "*.jpeg" \) | sort))
 
-./pywal.sh
+# Create or reset history file if all images have been used
+if [[ -f "$history_file" ]]; then
+  used_pics=($(cat "$history_file"))
+else
+  used_pics=()
+fi
+
+# Compare used pics with available pics
+remaining_pics=()
+for pic in "${PICS[@]}"; do
+  if [[ ! " ${used_pics[*]} " =~ " ${pic} " ]]; then
+    remaining_pics+=("$pic")
+  fi
+done
+
+# Shuffle and refill if necessary
+if [[ ${#remaining_pics[@]} -eq 0 ]]; then
+  remaining_pics=("${PICS[@]}")
+  echo "" >"$history_file" # Clear history
+fi
+
+# Choose a random picture from remaining
+random_index=$((RANDOM % ${#remaining_pics[@]}))
+random_picture="${remaining_pics[random_index]}"
+
+# Update history
+echo "$random_picture" >>"$history_file"
+
+# Apply the wallpaper using swww
+wallpaper="$random_picture"
+swww img "$wallpaper" --transition-type grow --transition-pos 0.9,0.1 --transition-duration 2.5 --transition-fps 90
+
+sleep 2.5
+
+# Update current wallpaper symlink
+ln -sf "$wallpaper" "$current_wallpaper"
+
+# Execute additional pywal script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+"$SCRIPT_DIR/pywal.sh"
