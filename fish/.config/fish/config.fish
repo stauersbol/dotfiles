@@ -14,8 +14,17 @@ set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 # zoxide
-zoxide init fish | source
+zoxide init fish --cmd cd | source
 
 # direnv
 direnv hook fish | source
 direnv export fish | source
+
+
+# alias
+alias n="nvim"
+alias y="yazi"
+alias z="zellij"
+alias lg="lazygit"
+alias zup="sudo zypper up"
+alias zi="sudo zypper in"
