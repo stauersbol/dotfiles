@@ -17,6 +17,7 @@ zoxide init fish --cmd cd | source
 direnv hook fish | source
 direnv export fish | source
 
+bind \cf open_project
 
 # alias
 alias n="nvim"
