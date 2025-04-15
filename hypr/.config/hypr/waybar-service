@@ -6,13 +6,13 @@ CONFIG_FILES="$HOME/.config/waybar/config.jsonc $HOME/.config/waybar/style.css"
 trap "kill $WAYBAR_PID" EXIT
 
 while true; do
-	logger -i "$0: Starting waybar in the background..."
-	waybar &
-	WAYBAR_PID=$!
-	logger -i "$0: Started waybar PID=$WAYBAR_PID. Waiting for modifications to config files..."
-	inotifywait -e modify ${CONFIG_FILES} 2>&1 | logger -i
-	logger -i "$0: inotifywait returned $?. Killing waybar process with PID=$WAYBAR_PID..."
-	kill $WAYBAR_PID 2>&1 | logger -i
-	logger -i "$0: Killed waybar PID=$WAYBAR_PID, wait a sec..."
-	sleep 1
+  logger -i "$0: Starting waybar in the background..."
+  waybar &
+  WAYBAR_PID=$!
+  logger -i "$0: Started waybar PID=$WAYBAR_PID. Waiting for modifications to config files..."
+  inotifywait -e modify ${CONFIG_FILES} 2>&1 | logger -i
+  logger -i "$0: inotifywait returned $?. Killing waybar process with PID=$WAYBAR_PID..."
+  kill $WAYBAR_PID 2>&1 | logger -i
+  logger -i "$0: Killed waybar PID=$WAYBAR_PID, wait a sec..."
+  sleep 1
 done
