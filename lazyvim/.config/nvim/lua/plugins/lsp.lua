@@ -15,6 +15,7 @@ return {
         crystalline = {},
         hyprls = {},
         fish_lsp = {},
+        qmlls = {},
       },
     },
   },
@@ -32,6 +33,7 @@ return {
           "v",
           "vue",
           "zig",
+          "qmljs",
         })
       end
     end,
