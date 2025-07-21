@@ -5,6 +5,7 @@
 
 vim.wo.relativenumber = false
 vim.opt.showtabline = 0
+vim.g.root_spec = { "cwd" }
 
 -- Only turn on for debugging LSP stuff.
 -- vim.lsp.set_log_level("debug")
