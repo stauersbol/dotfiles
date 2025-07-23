@@ -8,8 +8,15 @@ layout {
             command "fish"
             args "-i" "-c" "lazygit"
         }
-        pane name="terminal" {
+        pane split_direction="horizontal" {
+          pane name="terminal" {
             cwd "__PROJECT_PATH__"
+          }
+          pane name="nvim" {
+            cwd "__PROJECT_PATH__"
+            command "nvim"
+            args "__PROJECT_PATH__"
+          }
         }
     }
 }
