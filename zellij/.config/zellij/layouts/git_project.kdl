@@ -5,7 +5,8 @@ layout {
     pane split_direction="vertical" {
         pane name="lazygit" {
             cwd "__PROJECT_PATH__"
-            command "lazygit"
+            command "fish"
+            args "-i" "-c" "lazygit"
         }
         pane name="terminal" {
             cwd "__PROJECT_PATH__"
