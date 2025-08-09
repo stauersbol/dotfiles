@@ -6,6 +6,9 @@ return {
     opts = {
       flavour = "mocha",
       transparent_background = true,
+      float = {
+        transparent = true,
+      },
       integrations = {
         alpha = true,
         cmp = true,
@@ -14,7 +17,10 @@ return {
         indent_blankline = { enabled = true },
         lsp_trouble = true,
         mason = true,
-        mini = true,
+        leap = true,
+        mini = {
+          enabled = true,
+        },
         native_lsp = {
           enabled = true,
           underlines = {
@@ -30,19 +36,16 @@ return {
         notify = true,
         neotree = true,
         semantic_tokens = true,
-        telescope = true,
+        telescope = {
+          enabled = true,
+        },
         treesitter = true,
+        treesitter_context = true,
         which_key = true,
         rainbow_delimiters = true,
-      },
-      highlight_overrides = {
-        mocha = function(mocha)
-          return {
-            NeoTreeNormal = { bg = mocha.none },
-            NeoTreeNormalNC = { bg = mocha.none },
-            NeoTreeVertSplit = { bg = mocha.base },
-          }
-        end,
+        snacks = {
+          enabled = true,
+        },
       },
     },
   },
