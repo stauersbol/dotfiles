@@ -3,7 +3,11 @@
 //
 
 keybinds clear-defaults=true {
-    unbind "Ctrl h" 
+    unbind "Ctrl h"
+    unbind "Alt h"
+    unbind "Alt j"
+    unbind "Alt k"
+    unbind "Alt l"
     locked {
         bind "Ctrl g" { SwitchToMode "normal"; }
     }
@@ -300,7 +304,7 @@ theme "catppuccin-mocha"
 //   - true (default)
 //   - false
 // 
-// mouse_mode false
+mouse_mode true
  
 // Toggle having pane frames around the panes
 // Options:
