@@ -39,6 +39,7 @@ return {
         telescope = {
           enabled = true,
         },
+        fzf = true,
         treesitter = true,
         treesitter_context = true,
         which_key = true,
