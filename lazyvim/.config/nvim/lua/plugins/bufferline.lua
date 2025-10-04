@@ -1,6 +1,8 @@
 return {
   {
     "akinsho/bufferline.nvim",
+    after = "catppuccin/nvim",
+    enabled = false,
     opts = {
       options = {
         mode = "buffers",
