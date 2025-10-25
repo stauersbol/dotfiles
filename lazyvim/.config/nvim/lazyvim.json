@@ -7,6 +7,7 @@
     "lazyvim.plugins.extras.dap.core",
     "lazyvim.plugins.extras.dap.nlua",
     "lazyvim.plugins.extras.editor.dial",
+    "lazyvim.plugins.extras.editor.harpoon2",
     "lazyvim.plugins.extras.editor.inc-rename",
     "lazyvim.plugins.extras.editor.leap",
     "lazyvim.plugins.extras.editor.refactoring",
@@ -37,7 +38,6 @@
     "lazyvim.plugins.extras.test.core",
     "lazyvim.plugins.extras.ui.treesitter-context",
     "lazyvim.plugins.extras.util.dot",
-    "lazyvim.plugins.extras.util.project",
     "lazyvim.plugins.extras.util.startuptime"
   ],
   "install_version": 7,
