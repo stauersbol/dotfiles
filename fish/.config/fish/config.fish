@@ -6,6 +6,8 @@ end
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
 
+set -gx PATH "$HOME/.local/bin" $PATH
+
 set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # bun
@@ -28,3 +30,6 @@ alias z="zellij"
 alias lg="lazygit"
 alias zup="sudo zypper up"
 alias zi="sudo zypper in"
+
+# Created by `pipx` on 2025-11-17 10:44:28
+set PATH $PATH /home/stauersbol/.local/bin
