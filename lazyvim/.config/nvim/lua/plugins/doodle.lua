@@ -1,6 +1,5 @@
 return {
-  "stauersbol/doodle",
-  branch = "add-git-remote-options",
+  "apdot/doodle",
   dependencies = {
     "kkharji/sqlite.lua",
     "nvim-lua/plenary.nvim",
