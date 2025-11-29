@@ -1,4 +1,7 @@
+from ignis import widgets
 from ignis.widgets import Widget
+
+from modules.bar.widgets.workspaces import Workspaces
 
 
 class Bar(Widget.Window):
@@ -14,5 +17,6 @@ class Bar(Widget.Window):
             kb_mode="none",
             child=Widget.CenterBox(
                 css_classes=["bar-widget"],
+                start_widget=widgets.Box(child=[Workspaces()]),
             ),
         )
