@@ -33,3 +33,7 @@ alias zi="sudo zypper in"
 
 # Created by `pipx` on 2025-11-17 10:44:28
 set PATH $PATH /home/stauersbol/.local/bin
+
+if command -q mise
+    mise activate fish | source
+end
