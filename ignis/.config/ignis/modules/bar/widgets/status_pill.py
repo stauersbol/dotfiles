@@ -1,23 +1,14 @@
 from ignis.services.audio import AudioService
-from ignis import utils, widgets
-from ignis.variable import Variable
-import datetime
+from ignis.widgets import Widget
 
 audio = AudioService.get_default()
 
 
-class IndicatorIcon(widgets.Icon):
+class IndicatorIcon(Widget.Icon):
     def __init__(self, css_classes: list[str] = [], **kwargs):
         super().__init__(
             style="margin-right: 0.5rem;", css_classes=["unset"] + css_classes, **kwargs
         )
-
-
-current_time = Variable(
-    value=utils.Poll(
-        1000, lambda x: datetime.datetime.now().strftime("%a, %d %b %y | %I:%M %p")
-    ).bind("output")
-)
 
 
 class VolumeIcon(IndicatorIcon):
@@ -27,12 +18,20 @@ class VolumeIcon(IndicatorIcon):
         )
 
 
-class StatusPill(widgets.Button):
+def calc_volume():
+    current_level: float = audio.speaker.volume
+
+    current_level_int = int(current_level * 100)
+    return max(current_level_int, 0)
+
+
+class VolumeNumber(Widget.Label):
+    def __init__(self):
+        super().__init__(label=calc_volume())
+
+
+class StatusPill(Widget.Button):
     def __init__(self, monitor: int):
         self._monitor = monitor
 
-        super().__init__(
-            child=widgets.Box(
-                child=[VolumeIcon(), widgets.Label(label=current_time.bind("value"))]
-            )
-        )
+        super().__init__(child=Widget.Box(child=[VolumeIcon(), VolumeNumber()]))
