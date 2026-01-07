@@ -8,6 +8,10 @@ keybinds clear-defaults=true {
     unbind "Alt j"
     unbind "Alt k"
     unbind "Alt l"
+    unbind "Ctrl k"
+    unbind "Ctrl j"
+    unbind "Ctrl l"
+    unbind "Ctrl o"
     locked {
         bind "Ctrl g" { SwitchToMode "normal"; }
     }
@@ -106,7 +110,7 @@ keybinds clear-defaults=true {
             }
             SwitchToMode "normal"
         }
-        bind "Ctrl o" { SwitchToMode "normal"; }
+        unbind "Ctrl o"
         bind "p" {
             LaunchOrFocusPlugin "plugin-manager" {
                 floating true
@@ -147,7 +151,7 @@ keybinds clear-defaults=true {
         bind "Ctrl h" { SwitchToMode "move"; }
     }
     shared_except "locked" "session" {
-        bind "Ctrl o" { SwitchToMode "session"; }
+        unbind "Ctrl o"
     }
     shared_except "locked" "scroll" "search" "tmux" {
         bind "Ctrl b" { SwitchToMode "tmux"; }
@@ -328,7 +332,7 @@ mouse_mode true
 //   - detach (Default)
 //   - quit
 // 
-// on_force_close "quit"
+on_force_close "quit"
  
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back
@@ -394,7 +398,7 @@ mouse_mode true
 //   - true (default)
 //   - false
 // 
-// session_serialization false
+session_serialization false
  
 // Whether pane viewports are serialized along with the session, default is false
 // Options:
