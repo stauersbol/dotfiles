@@ -1,3 +1,5 @@
 custom.el
 
 lazy-lock.json
+
+/zellij/.config/zellij/plugins/**
