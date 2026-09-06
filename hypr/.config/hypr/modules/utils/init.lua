@@ -12,7 +12,7 @@ end
 
 function get_hostname()
 	-- Try environment first
-	local env_hostname = os.getenv("HOSTNAME") or os.getenv("COMPUTERNAME")
+	local env_hostname = os.getenv("HOSTNAME") or os.getenv("hostname") or os.getenv("COMPUTERNAME")
 	if env_hostname then
 		return env_hostname
 	end
