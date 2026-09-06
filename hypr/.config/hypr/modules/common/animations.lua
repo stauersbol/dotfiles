@@ -26,20 +26,6 @@ hl.animation({
 })
 
 hl.animation({
-	leaf = "windowsMove",
-	enabled = true,
-	speed = 4,
-	curve = "default",
-})
-
-hl.animation({
-	leaf = "border",
-	enabled = true,
-	speed = 10,
-	curve = "default",
-})
-
-hl.animation({
 	leaf = "fade",
 	enabled = true,
 	speed = 10,
